@@ -74,13 +74,14 @@ public class ProductService implements ProductServiceInterface{
     //get product by id and name
     @Override
     public Product getProductByIdName(int id, String name){
-        Product productById;
-        productById = repository.findById(id).get();
-        if(productById.getName().equals(name)){
-            return productById;
-        }
-        return null;
-
+//        Product productById;
+//        productById = repository.findById(id).get();
+//        if(productById.getName().equals(name)){
+//            return productById;
+//        }
+//        return null;
+        Product product = repository.findByIdAndName(id, name);
+        return product;
 
 
     }
